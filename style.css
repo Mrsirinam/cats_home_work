@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+h3 {
+  margin: 0;
+}
+.container {
+	min-height: 100vh;
+	background-color: #FCDCEB;
+	padding: 30px;
+	margin: auto;
+	max-width: 1020px;
+	box-sizing: border-box ;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	align-content: flex-start;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding-bottom: 12px;
+	align-items: center;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 0 15px darkviolet;
+	position: relative;
+}
+.card .pic {
+	height: 200px;
+	width: 100%;
+	background-color: #fff;
+	background-image: url(https://oir.mobi/uploads/posts/2020-01/1579151657_20-35.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+.card .default {
+  background: url("https://i.yapx.ru/V1SWA.png");
+  background-size: contain;
+}
+.card__like {
+	position: absolute;
+	right: 8px;
+	bottom: 8px;
+	color: darkviolet;
+	cursor: pointer;
+}
+.rating i {
+  color: rgb(255, 40, 223, 0.83);
+}
+.btn {
+  outline: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: darkviolet;
+  color: aliceblue;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.btn:hover {
+  color: rgba(255, 40, 223, 0.83);
+  /* transform: scale(1.05, 1.05); */
+  z-index: 12;
+}
+
+.add {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 11;
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.modal-block {
+  background-color: rgba(62, 62, 62, 0.8);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-block.active {
+  display: flex;
+}
+.modal {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  width: calc(100% - 100px);
+  max-width: 500px;
+  max-height: calc(100% - 100px);
+  position: relative;
+  overflow: auto;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) auto;
+  gap: 18px;
+}
+.form-line {
+  display: grid;
+  gap: 6px;
+}
+
+.form-span-2 {
+  grid-column-end: span 2;
+}
+.form-span-3 {
+  grid-column-end: span 3;
+}
+.preview {
+  background-color: rgb(225, 180, 239);
+  height: 320px;
+  width: auto;
+  border-radius: 6px;
+  background-image: url(/img/404.png);
+  background-position: center;
+  background-size: cover;
+}
+input,
+textarea {
+  outline: none;
+  border: 1px solid rgb(255, 40, 223, 0.83);
+  padding: 6px 8px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  font: inherit;
+}
+input:focus,
+textarea:focus {
+  border-color: rgb(247, 30, 215);
+}
+textarea {
+  resize: vertical;
+}
+label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.saveBtn {
+  border-radius: 6px;
+  width: 140px;
+  display: flex;
+  justify-content: left;
+  text-align: center;
+}
+.saveBtn i {
+  margin-top: 4px;
+}
+.saveBtn span {
+  margin-top: 4px;
+  margin-left: 8px;
+}
+.btnDelete {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 250, 250);
+  color: purple;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .container {
+    max-width: 720px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card__like {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    max-width: 520px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .preview {
+    height: 160px;
+    background-repeat: no-repeat;
+  }
+  .card__like {
+    font-size: 25px;
+  }
+}
